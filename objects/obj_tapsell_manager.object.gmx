@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.text = "Loading"
-tapsell_initialize("rashssjnjiaeqqeihgjdsihajkbkqgeqqdoftpafmlcoofdflejgmttlercbsdfbnjnjqs")
-global.text = "Initialized"
+            <string>tapsell_setDebugMode("true")
+global.text = tapsell_initialize("aflcdemoadoadhornijaksjadhpkifliskeesohctsnsolmrdblhfcijkplcigneitabkr")
+tapsell_requestBannerAd("5a0ab0eb73916d0001696b68",BANNER_320x50,TOP,LEFT)
 </string>
           </argument>
         </arguments>
@@ -52,7 +52,7 @@ global.text = "Initialized"
             <kind>1</kind>
             <string>global.text = "Clicked"
 //showAd("default","true","true","1")
-tapsell_requestAd("","false")
+tapsell_requestAd("5a0a9bebdc1ff00001d36219","false")
 global.text = "requested";
 </string>
           </argument>

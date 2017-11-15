@@ -9,22 +9,30 @@
   <description></description>
   <helpfile></helpfile>
   <androidProps>-1</androidProps>
-  <iosProps>0</iosProps>
+  <iosProps>-1</iosProps>
   <installdir></installdir>
-  <classname></classname>
+  <classname>TapsellGMController</classname>
   <androidclassname>Tapsell</androidclassname>
   <sourcedir></sourcedir>
   <androidsourcedir></androidsourcedir>
   <macsourcedir></macsourcedir>
   <maclinkerflags></maclinkerflags>
+  <maccompilerflags></maccompilerflags>
   <androidinject>&lt;activity android:name="ir.tapsell.sdk.TapsellAdActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"/&gt;</androidinject>
+  <androidmanifestinject></androidmanifestinject>
+  <iosplistinject></iosplistinject>
+  <androidactivityinject></androidactivityinject>
+  <gradleinject></gradleinject>
   <iosSystemFrameworks/>
-  <iosThirdPartyFrameworks/>
+  <iosThirdPartyFrameworks>
+    <Framework weak="0">TapsellSDKv3.framework</Framework>
+  </iosThirdPartyFrameworks>
   <androidPermissions>
     <Permission>android.permission.INTERNET</Permission>
     <Permission>android.permission.ACCESS_NETWORK_STATE</Permission>
     <Permission>android.permission.READ_PHONE_STATE</Permission>
+    <Permission>android.permission.VIBRATION</Permission>
   </androidPermissions>
   <IncludedResources/>
   <files>
@@ -34,11 +42,13 @@
       <init></init>
       <final></final>
       <kind>4</kind>
+      <uncompress>0</uncompress>
       <ConfigOptions>
         <Config name="Default">
-          <CopyToMask>8</CopyToMask>
+          <CopyToMask>35651596</CopyToMask>
         </Config>
       </ConfigOptions>
+      <ProxyFiles/>
       <functions>
         <function>
           <name>tapsell_initialize</name>
@@ -64,21 +74,10 @@
           </args>
         </function>
         <function>
-          <name>tapsell_isAdReadyToShow</name>
-          <externalName>isAdReadyToShow</externalName>
-          <kind>11</kind>
-          <help>tapsell_isAdReadyToShow(String zoneId)</help>
-          <returnType>1</returnType>
-          <argCount>1</argCount>
-          <args>
-            <arg>1</arg>
-          </args>
-        </function>
-        <function>
           <name>tapsell_showAd</name>
           <externalName>showAd</externalName>
           <kind>11</kind>
-          <help>tapsell_showAd(String id, String back_disabled, String immersive_mode, int rotation_mode)</help>
+          <help>tapsell_showAd(String id, String back_disabled, String immersive_mode, int rotation_mode, String show_dialog)</help>
           <returnType>1</returnType>
           <argCount>5</argCount>
           <args>
@@ -110,7 +109,7 @@
           <args/>
         </function>
         <function>
-          <name>tapell_setAppUserId</name>
+          <name>tapsell_setAppUserId</name>
           <externalName>setAppUserId</externalName>
           <kind>11</kind>
           <help>tapsell_setAppUserId(String appUserId)</help>
@@ -180,6 +179,31 @@
           <argCount>0</argCount>
           <args/>
         </function>
+        <function>
+          <name>tapsell_setPermissionHandlerConfig</name>
+          <externalName>setPermissionHandlerConfig</externalName>
+          <kind>11</kind>
+          <help>tapsell_setPermissionHandlerConfig(String config)</help>
+          <returnType>1</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>1</arg>
+          </args>
+        </function>
+        <function>
+          <name>tapsell_requestBannerAd</name>
+          <externalName>requestBannerAd</externalName>
+          <kind>11</kind>
+          <help>tapsell_requestBannerAd(String zoneId, String bannerType, String horizontalGravity, String verticalGravity)</help>
+          <returnType>1</returnType>
+          <argCount>4</argCount>
+          <args>
+            <arg>1</arg>
+            <arg>1</arg>
+            <arg>1</arg>
+            <arg>1</arg>
+          </args>
+        </function>
       </functions>
       <constants>
         <constant>
@@ -214,27 +238,72 @@
         </constant>
         <constant>
           <name>TAPSELL_ORIENTATION_LOCKED_PORTRAIT</name>
-          <value>1</value>
+          <value>"1"</value>
           <hidden>0</hidden>
         </constant>
         <constant>
           <name>TAPSELL_ORIENTATION_LOCKED_LANDSCAPE</name>
-          <value>2</value>
+          <value>"2"</value>
           <hidden>0</hidden>
         </constant>
         <constant>
           <name>TAPSELL_ORIENTATION_UNLOCKED</name>
-          <value>3</value>
+          <value>"3"</value>
           <hidden>0</hidden>
         </constant>
         <constant>
           <name>TAPSELL_ORIENTATION_LOCKED_REVERSED_PORTRAIT</name>
-          <value>4</value>
+          <value>"4"</value>
           <hidden>0</hidden>
         </constant>
         <constant>
           <name>TAPSELL_ORIENTATION_LOCKED_REVERSED_LANDSCAPE</name>
+          <value>"5"</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>TOP</name>
+          <value>"1"</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>BOTTOM</name>
+          <value>2</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>LEFT</name>
+          <value>3</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>RIGHT</name>
+          <value>4</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>CENTER</name>
           <value>5</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>BANNER_320x50</name>
+          <value>1</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>BANNER_320x100</name>
+          <value>2</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>BANNER_250x250</name>
+          <value>3</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>BANNER_300x250</name>
+          <value>4</value>
           <hidden>0</hidden>
         </constant>
       </constants>

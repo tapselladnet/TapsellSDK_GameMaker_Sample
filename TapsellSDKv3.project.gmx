@@ -9,12 +9,14 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_tapsell</sprite>
+    <sprite>sprites\sprite1</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_tapsell_manager</object>
     <object>objects\obj_state</object>
+    <object>objects\obj_tapsell_show_banner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_start</room>

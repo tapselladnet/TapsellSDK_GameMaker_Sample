@@ -3,7 +3,7 @@
   <name>TapsellSDKv3</name>
   <version>1.0.0</version>
   <packageID></packageID>
-  <ProductID></ProductID>
+  <ProductID>F79C97955FD1AF4686EB4EF4EF90F0DB</ProductID>
   <date>08/01/17</date>
   <license>Free to use, also for commercial games.</license>
   <description></description>
@@ -66,7 +66,7 @@
           <externalName>requestAd</externalName>
           <kind>11</kind>
           <help>tapsell_requestAd(String zoneId, String isCached)</help>
-          <returnType>1</returnType>
+          <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
             <arg>1</arg>
@@ -204,6 +204,28 @@
             <arg>1</arg>
           </args>
         </function>
+        <function>
+          <name>tapsell_showBannerAd</name>
+          <externalName>showBannerAd</externalName>
+          <kind>11</kind>
+          <help>tapsell_showBannerAd(String zoneId)</help>
+          <returnType>1</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>1</arg>
+          </args>
+        </function>
+        <function>
+          <name>tapsell_hideBannerAd</name>
+          <externalName>hideBannerAd</externalName>
+          <kind>11</kind>
+          <help>tapsell_hideBannerAd(String zoneId)</help>
+          <returnType>1</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>1</arg>
+          </args>
+        </function>
       </functions>
       <constants>
         <constant>
@@ -304,6 +326,31 @@
         <constant>
           <name>BANNER_300x250</name>
           <value>4</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>TAPSELL_EVENT_BANNER_ERROR</name>
+          <value>"TAPSELL_BANNER_ERROR"</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>TAPSELL_EVENT_BANNER_FILLED</name>
+          <value>"TAPSELL_BANNER_FILLED"</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>TAPSELL_EVENT_BANNER_NO_NETWORK</name>
+          <value>"TAPSELL_BANNER_NO_NETWORK"</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>TAPSELL_EVENT_BANNER_NO_AD_AVAILABLE</name>
+          <value>"TAPSELL_BANNER_NO_AD_AVAILABLE"</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>TAPSELL_EVENT_BANNER_HIDE</name>
+          <value>"TAPSELL_BANNER_HIDE"</value>
           <hidden>0</hidden>
         </constant>
       </constants>

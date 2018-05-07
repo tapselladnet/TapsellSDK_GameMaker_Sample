@@ -196,13 +196,13 @@
   <h1>موارد پیشرفته‌تر در SDK</h1>
   <h3>بررسی وجود تبلیغ دریافت شده</h3>
 در صورتیکه در SDK برای یک ناحیه درخواست دریافت تبلیغ از سرور انجام داده باشید، علاوه بر <code>callback</code> داده شده در تابع <code>requestAd</code>، می‌توانید از تابع زیر نیز برای چک کردن وجود تبلیغ دریافت شده استفاده کنید.
-<pre style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_isAdReadyToShow</span><span style="color: #333333;">(<span style="color: #800000;">zoneId</span></span><span style="color: #333333;">);</span></pre>
+<pre dir="ltr" style="margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_isAdReadyToShow</span><span style="color: #333333;">(<span style="color: #800000;">zoneId</span></span><span style="color: #333333;">);</span></pre>
 ورودی <code>zoneId</code> در این تابع، شناسه ناحیه نمایش تبلیغ است که از پنل تپسل دریافت نموده‌اید.
 
 &nbsp;
 <h3>دریافت نسخه SDK تپسل</h3>
 درصورتی که نیازمند به دانستن نسخه تپسل پیاده‌سازی شده در اپلیکیشن خود هستید، می‌توانید با فراخوانی تابع زیر عنوان نسخه را دریافت نمایید.
-<pre style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_getVersion</span><span style="color: #333333;">();</span></pre>
+<pre dir="ltr" style=" margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_getVersion</span><span style="color: #333333;">();</span></pre>
 <h3></h3>
 <h3>تنظیمات کشینگ</h3>
 همانطور که در بخش <a href="https://answers.tapsell.ir/?ht_kb=android-sdk-p2">پیاده‌سازی SDK تپسل در اپلیکیشن</a> گفته شد، از نسخه ۳ به بعد تپسل قابلیت نمایش ویدئو بصورت استریم و همینطور نمایش ویدئو بعد از دانلود فایل (کشینگ) را دارد. با این قابلیت، قبل از نمایش تبلیغ و در هنگامی که کاربر مشغول استفاده از اپلیکیشن است، ویدئو بطور کامل دریافت می‌شود و کاربر بدون هیچگونه مکثی می‌تواند ویدئو را تماشا کند.
@@ -210,15 +210,15 @@
 از طرف دیگر، در اپلیکیشن‌ها و بازی‌های آنلاین، دریافت ویدئو در پس زمینه ممکن است در روند اصلی برنامه خلل ایجاد کند و آن را کند نماید.
 
 جهت جلوگیری از اشغال پهنای باند زیاد توسط تپسل، شما می‌توانید درصد مشخصی از کل پهنای باند موجود را به دانلود ویدئو اختصاص دهید. جهت انجام این عمل، تابع زیر را قبل از درخواست تبلیغ، فراخوانی کنید.
-<pre style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_setMaxAllowedBandwidthUsagePercentage</span><span style="color: #333333;">(</span><span style="color: #800000;">maxPercentage</span><span style="color: #333333;">);</span></pre>
+<pre dir="ltr" style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_setMaxAllowedBandwidthUsagePercentage</span><span style="color: #333333;">(</span><span style="color: #800000;">maxPercentage</span><span style="color: #333333;">);</span></pre>
 در این تابع، ورودی <code>maxPercentage</code> یک رشته حاوی عدد و مشخص کننده حداکثر درصدی از پهنای باند در دسترس اپلیکیشن است که SDK تپسل از آن برای دریافت ویدئو استفاده می‌کند. این پارامتر باید بین "10" تا "100" باشد.
 
 همچنین درصورتی که از سرعت دانلود واقعی کاربر در اپلیکیشن خود اطلاع دارید می‌توانید به کمک تابع زیر، مقدار حداکثر پهنای باند قابل استفاده برای دانلود ویدئو را به کمک تابع زیر تنظیم کنید.
-<pre style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_setMaxAllowedBandwidthUsage</span><span style="color: #333333;">(<span style="color: #800000;">m</span></span><span style="color: #800000;">axBpsSpeed</span><span style="color: #333333;">);</span></pre>
+<pre dir="ltr"  style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_setMaxAllowedBandwidthUsage</span><span style="color: #333333;">(<span style="color: #800000;">m</span></span><span style="color: #800000;">axBpsSpeed</span><span style="color: #333333;">);</span></pre>
 ورودی دوم این تابع، میزان حداکثر سرعت دانلود ویدئو است که باید به واحد بایت بر ثانیه داده شود.
 
 در صورتی که در بخشی از اپلیکیشن خود می‌خواهید تنظیمات مربوط به محدودیت سرعت دانلود را غیرفعال نمایید، از تابع زیر استفاده کنید.
-<pre style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_clearBandwidthUsageConstrains</span><span style="color: #333333;">(</span><span style="color: #333333;">);</span></pre>
+<pre dir="ltr" style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_clearBandwidthUsageConstrains</span><span style="color: #333333;">(</span><span style="color: #333333;">);</span></pre>
 &nbsp;
 
 توضیحات بیشتر درباره کشینگ و استریمینگ در SDK تپسل را <a href="https://answers.tapsell.ir/?ht_kb=cached-vs-streamed">اینجا</a> بخوانید.
@@ -228,13 +228,13 @@
 از نسخه اندروید 6 و بالاتر، برخی دسترسی‌ها در اندروید در زمان اجرا باید از کاربر درخواست شوند. یکی از این دسترسی‌ها، دسترسی <code>READ_PHONE_STATE</code> است که توسط تپسل استفاده می‌شود و بدون این دسترسی، SDK تپسل قابل استفاده نیست. برای سهولت پیاده‌سازی، SDK تپسل بصورت اتوماتیک دسترسی‌ها را از کاربر درخواست می‌کند و هربار درخواست تبلیغی ارسال شود، درصورتی که دسترسی مورد نیاز موجود نباشد، این دسترسی از کاربر خواسته می شود.
 
 در صورتی که شما می‌خواهید درخواست دسترسی‌ها از کاربر را به نحو دیگری در اپلیکیشن خود پیاده‌سازی نمایید، می‌توانید این ویژگی پیش‌فرض را در تپسل غیر فعال کنید. جهت انجام این عمل، کافیست از تابع زیر استفاده کنید.
-<pre style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_setAutoHandlePermissions</span><span style="color: #333333;">(</span><span style="color: #800000;">"false"</span><span style="color: #333333;">)</span></pre>
+<pre  dir="ltr" style="direction: ltr; margin: 0; line-height: 125%;"><span style="color: #ff9900;">tapsell_setAutoHandlePermissions</span><span style="color: #333333;">(</span><span style="color: #800000;">"false"</span><span style="color: #333333;">)</span></pre>
 با این دستور، درخواست دسترسی توسط SDK تپسل به کاربر نشان داده نمی‌شود و می‌توانید بصورت مطلوب خود آن را پیاده‌سازی نمایید.
 
 &nbsp;
 <h3>حالت دیباگ (Debug Mode)</h3>
 در هنگام پیاده‌سازی SDK، ممکن است بدلیل عدم رعایت نکات گفته شده و یا خطاهای دیگر، تبلیغات قابل دریافت و نمایش نباشند. حالت دیباگ جهت تسهیل فرآیند عیب‌یابی در هنگام پیاده‌سازی تعبیه شده است. با فعالسازی این حالت، می‌توانید گزارش‌های لاگ نمایش داده شده توسط SDK را در logcat مشاهده کنید. برای فعالسازی حالت دیباگ کافیست از تابع زیر استفاده کنید.
-<pre style="direction: ltr; margin: 0; line-height: 125%;">TapsellConfiguration config <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> TapsellConfiguration<span style="color: #333333;">();</span>
+<pre  dir="ltr" style="direction: ltr; margin: 0; line-height: 125%;">TapsellConfiguration config <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> TapsellConfiguration<span style="color: #333333;">();</span>
 <span style="color: #ff9900;">tapsell_setDebugMode</span><span style="color: #333333;">(</span><span style="color: #800000;">"true"</span><span style="color: #333333;">);</span>
 Tapsell<span style="color: #333333;">.</span><span style="color: #0000cc;">initialize</span><span style="color: #333333;">(</span>context<span style="color: #333333;">,</span> config<span style="color: #333333;">,</span> appKey<span style="color: #333333;">);</span>
 </pre>
